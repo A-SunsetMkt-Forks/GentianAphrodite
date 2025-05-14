@@ -1,6 +1,6 @@
 import { match_keys } from '../../scripts/match.mjs'
 import os from 'node:os'
-import osinfo from 'npm:node-os-utils'
+import osinfo from 'node-os-utils'
 import process from 'node:process'
 import { exec } from '../../scripts/exec.mjs'
 

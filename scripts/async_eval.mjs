@@ -1,7 +1,7 @@
-import { parse } from 'npm:acorn'
-import { walk } from 'npm:estree-walker'
-import { generate } from 'npm:astring'
-import { builders } from 'npm:ast-types'
+import { parse } from 'acorn'
+import { walk } from 'estree-walker'
+import { generate } from 'astring'
+import { builders } from 'ast-types'
 import { VirtualConsole } from './virtualConsole.mjs'
 
 /**
@@ -22,7 +22,7 @@ export async function async_eval(code, args = {}, virtualconsole = new VirtualCo
 		})
 
 		walk(ast, {
-			enter(/** @type {import('npm:estree').Node} */ node, parent, prop, index) {
+			enter(/** @type {import('estree').Node} */ node, parent, prop, index) {
 				// 将 import xxx from 'module' 转换为 const { xxx } = await import('module')
 				if (node.type === 'ImportDeclaration') {
 					const dynamicImportCall = builders.awaitExpression(

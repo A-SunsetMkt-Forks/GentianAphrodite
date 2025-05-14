@@ -1,6 +1,6 @@
-import { rollup } from 'npm:rollup'
-import confuser from 'npm:javascript-obfuscator'
-import { minify } from 'npm:terser'
+import { rollup } from 'rollup'
+import confuser from 'javascript-obfuscator'
+import { minify } from 'terser'
 import fs from 'node:fs'
 import { exec } from '../../scripts/exec.mjs'
 import { nicerWriteFileSync } from '../../scripts/tools.mjs'
@@ -11,7 +11,6 @@ const result = await rollup({
 	input: './main.mjs',
 	external: [
 		/node:.*/,
-		/npm:.*/,
 		/https:\/\/.*/,
 		/(?:.{2}\/){6}.*/
 	]

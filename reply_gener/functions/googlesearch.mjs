@@ -1,4 +1,4 @@
-import { search, OrganicResult, ResultTypes } from 'npm:google-sr'
+import { search, OrganicResult, ResultTypes } from 'google-sr'
 import { tryFewTimes } from '../../scripts/tryFewTimes.mjs'
 import { statisticDatas } from '../../scripts/statistics.mjs'
 /** @typedef {import("../../../../../../../src/public/shells/chat/decl/chatLog.ts").chatLogEntry_t} chatLogEntry_t */

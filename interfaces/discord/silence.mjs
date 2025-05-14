@@ -4,7 +4,7 @@ import { parseDuration } from '../../scripts/tools.mjs'
 
 /**
  *
- * @param {import('npm:discord.js').Message} message
+ * @param {import('discord.js').Message} message
  * @returns {import('../../../../../../../src/decl/pluginAPI.ts').pluginAPI_t}
  */
 export const get_discord_silence_plugin = (message) => ({

@@ -6,7 +6,7 @@ import { decodeQrCodeFromBuffer } from '../../scripts/qrcode.mjs'
 /** @typedef {import("../../../../../../../src/decl/prompt_struct.ts").prompt_struct_t} prompt_struct_t */
 
 async function captureScreen() {
-	const { Monitor } = await import('npm:node-screenshots')
+	const { Monitor } = await import('node-screenshots')
 	const monitors = Monitor.all()
 	const mainMonitor = monitors[0]
 	const image = await mainMonitor.captureImage()

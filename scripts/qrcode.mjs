@@ -1,4 +1,4 @@
-import { grayscale, binarize, Detector, Decoder } from 'npm:@nuintun/qrcode'
+import { grayscale, binarize, Detector, Decoder } from '@nuintun/qrcode'
 import { createCanvas, loadImage } from 'https://deno.land/x/canvas/mod.ts'
 
 async function bufferToImageData(buffer) {

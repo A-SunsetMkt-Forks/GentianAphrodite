@@ -5,7 +5,7 @@ import { getPartInfo } from '../../../../../../../src/scripts/locale.mjs'
 /** @typedef {import("../logical_results/index.mjs").logical_results_t} logical_results_t */
 /** @typedef {import("../../../../../../../src/decl/prompt_struct.ts").prompt_struct_t} prompt_struct_t */
 
-import { Lunar } from 'npm:lunar-javascript'
+import { Lunar } from 'lunar-javascript'
 import { timeToStr, timeToTimeStr } from '../../scripts/tools.mjs'
 
 /**

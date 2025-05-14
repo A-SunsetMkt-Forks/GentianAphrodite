@@ -1,4 +1,4 @@
-import { Events, ChannelType } from 'npm:discord.js'
+import { Events, ChannelType } from 'discord.js'
 import { Buffer } from 'node:buffer'
 import { base_match_keys, SimplifiyChinese, PreprocessChatLogEntry } from '../../scripts/match.mjs'
 import { GetReply } from '../../reply_gener/index.mjs'
@@ -13,10 +13,10 @@ import { localhostLocales } from '../../../../../../../src/scripts/i18n.mjs'
 import { mimetypeFromBufferAndName } from '../../scripts/mimetype.mjs'
 import { charname, username } from '../../charbase.mjs'
 import { newCharReplay, newUserMessage } from '../../scripts/statistics.mjs'
-/** @typedef {import('npm:discord.js').Message} Message */
+/** @typedef {import('discord.js').Message} Message */
 /**
  *  @typedef { ((import('../../../../../../../src/public/shells/chat/decl/chatLog.ts').chatLogEntry_t) & {
- *	extension: {discord_messages: (import('npm:discord.js').OmitPartialGroupDMChannel<Message<boolean>>[])}
+ *	extension: {discord_messages: (import('discord.js').OmitPartialGroupDMChannel<Message<boolean>>[])}
  * })} chatLogEntry_t
  */
 /**
@@ -57,7 +57,7 @@ export async function DiscordBotMain(client, config) {
 
 	const chat_scoped_char_memory = {}
 	/**
-	 * @param {import('npm:discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
+	 * @param {import('discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
 	 * @returns {Promise<chatLogEntry_t>}
 	 */
 	async function DiscordMessageToFountChatLogEntry(message) {
@@ -149,7 +149,7 @@ export async function DiscordBotMain(client, config) {
 	 */
 	const ChannelChatLogs = {}
 	/**
-	 * @param {import('npm:discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
+	 * @param {import('discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
 	 * @returns {Promise<boolean>}
 	 */
 	async function CheckMessageContentTrigger(message, env) {
@@ -252,7 +252,7 @@ export async function DiscordBotMain(client, config) {
 		return result
 	}
 	/**
-	 * @param {import('npm:discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
+	 * @param {import('discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
 	 * @returns {(...args: any[]) => Promise<void>}
 	 */
 	function GetMessageSender(message) {
@@ -353,7 +353,7 @@ export async function DiscordBotMain(client, config) {
 	}
 	const BannedStrings = []
 	/**
-	 * @param {import('npm:discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
+	 * @param {import('discord.js').OmitPartialGroupDMChannel<Message<boolean>>} message
 	 * @returns {Promise<void>}
 	 */
 	async function DoMessageReply(message) {
@@ -512,7 +512,7 @@ export async function DiscordBotMain(client, config) {
 			const chatlog = ChannelChatLogs[channelid]
 
 			while (myQueue?.length) {
-				/** @type {import('npm:discord.js').OmitPartialGroupDMChannel<Message<boolean>>} */
+				/** @type {import('discord.js').OmitPartialGroupDMChannel<Message<boolean>>} */
 				let message
 
 				do {

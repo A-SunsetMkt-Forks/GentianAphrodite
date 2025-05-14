@@ -1,5 +1,5 @@
-import puppeteer from 'npm:puppeteer'
-import TurndownService from 'npm:turndown'
+import puppeteer from 'puppeteer'
+import TurndownService from 'turndown'
 import { where_command } from './exec.mjs' // 假设这是一个查找命令路径的辅助函数
 
 const DEFAULT_NAVIGATION_TIMEOUT = 4.5 * 1000 // 设置一个默认导航超时时间 (毫秒)
@@ -33,8 +33,8 @@ export async function NewBrowserGenerByName(name) {
 
 /**
  * 尝试按顺序 ('firefox', 'chrome') 启动一个可用的浏览器。
- * @param {import('npm:puppeteer').LaunchOptions} configs - Puppeteer 的启动配置。
- * @returns {Promise<import('npm:puppeteer').Browser>} - 返回一个 Puppeteer 浏览器实例。
+ * @param {import('puppeteer').LaunchOptions} configs - Puppeteer 的启动配置。
+ * @returns {Promise<import('puppeteer').Browser>} - 返回一个 Puppeteer 浏览器实例。
  * @throws {Error} - 如果没有找到或无法启动任何支持的浏览器。
  */
 export async function NewBrowser(configs) {
@@ -51,7 +51,7 @@ export async function NewBrowser(configs) {
 		}
 	}
 	try {
-		const edgePath = await where_command('msedge') || (await import('npm:edge-paths')).getEdgePath()
+		const edgePath = await where_command('msedge') || (await import('edge-paths')).getEdgePath()
 		const generator = await NewBrowserGenerByPath(edgePath)
 		if (generator) {
 			const browser = await generator(configs)

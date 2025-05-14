@@ -28,7 +28,7 @@ export async function CodeRunnerPrompt(args, logical_results, prompt_struct, det
 或
 <${process.platform === 'win32' ? 'run-pwsh' : 'run-bash'}>code</${process.platform === 'win32' ? 'run-pwsh' : 'run-bash'}>
 如：
-<run-js>(await import('npm:robotjs')).getScreenSize()</run-js>
+<run-js>(await import('robotjs')).getScreenSize()</run-js>
 或
 ${process.platform === 'win32' ?
 				`\
@@ -63,7 +63,7 @@ return Array.from({ length: 201 }, (_, i) => toEnglishWord(i)).join(', ')
 
 js代码相关：
 - 复杂情况下，考虑有什么npm包可以满足你的需求，参照例子使用<run-js>+import。
-  * 导入包需要符合deno的包名规范（追加\`npm|node|jsr:\`前缀），如\`npm:mathjs\`或\`node:fs\`。
+  * 导入包需要符合deno的包名规范（追加\`npm|node|jsr:\`前缀），如\`mathjs\`或\`node:fs\`。
 ${args.supported_functions.add_message ? `\
 - 对于会需要很长时间的任务，你可以使用\`callback\`函数来在异步完成后反馈内容。
   * 格式：callback(reason, promise)，reason为字符串，promise为promise对象。
@@ -81,7 +81,7 @@ ${args.supported_functions.files ? `\
   * 例子：[
 ${args.UserCharname}: 发我屏幕截图看看？
 龙胆: <run-js>
-	import { Monitor } from 'npm:node-screenshots'
+	import { Monitor } from 'node-screenshots'
 	async function captureScreen() {
 		const image = await Monitor.all()[0].captureImage()
 		return await image.toPng()

@@ -1,6 +1,6 @@
 import { parseDuration } from './tools.mjs'
 import { getVar, saveVar } from './vars.mjs'
-import llama3Tokenizer from 'npm:llama3-tokenizer-js'
+import llama3Tokenizer from 'llama3-tokenizer-js'
 
 function tokenize(prompt) {
 	return llama3Tokenizer.encode(prompt)
