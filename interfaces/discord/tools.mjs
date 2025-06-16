@@ -116,7 +116,7 @@ export function splitDiscordReply(reply, split_lenth = 2000) {
 	// 这个阶段现在应该只会处理那些经过智能分割后仍然超长的“普通文本块”。
 	for (const content_slice of content_slices)
 		if (content_slice.length > split_lenth)
-			// **修复点：检查是否是代码块（理论上不应该到这里，但作为保险）**
+			// 检查是否是代码块（理论上不应该到这里，但作为保险）
 			if (content_slice.startsWith('```'))
 				// 如果万一有代码块漏到这里，再次调用 splitCodeBlock
 				new_content_slices.push(...splitCodeBlock(content_slice))
